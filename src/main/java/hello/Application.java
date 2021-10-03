@@ -69,9 +69,9 @@ public class Application {
   @PostMapping("/**")
   public String index(@RequestBody ArenaUpdate arenaUpdate) {
     System.out.println(arenaUpdate);
-    log.info("dimension (?,?)", arenaUpdate.arena.dims.get(0), arenaUpdate.arena.dims.get(1));
+    log.info("dimension ({}},{})", arenaUpdate.arena.dims.get(0), arenaUpdate.arena.dims.get(1));
     PlayerState myState = arenaUpdate.arena.state.get("https://java-springboot-bot-o6vtvlku4q-as.a.run.app");
-    log.info("my coordination (?,?)", myState.x, myState.y );
+    log.info("my coordination ({},{})", myState.x, myState.y );
 
     String[] commands = new String[]{"F", "R", "L", "T"};
     int i = new Random().nextInt(4);
